@@ -29,15 +29,15 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: blog_application
+  username: blog_application
 
   # The password associated with the postgres role (username).
-  #password:
+  password: 2kcaq9JWE85F9ru0J9Xp
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: 51.75.75.231
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -58,6 +58,9 @@ development:
 test:
   <<: *default
   database: blog_application_test
+  username: blog_application
+  password: 2kcaq9JWE85F9ru0J9Xp
+  host: 51.75.75.231  
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,4 +86,6 @@ production:
   <<: *default
   database: blog_application_production
   username: blog_application
-  password: <%= Rails.application.credentials.dig(:prod_db_username) %>
+  # password: <%= Rails.application.credentials.dig(:prod_db_username) %>
+  password: 2kcaq9JWE85F9ru0J9Xp
+  host: 51.75.75.231
