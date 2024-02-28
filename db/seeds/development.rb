@@ -85,7 +85,7 @@ def seed_ahoy
                                         visitor_token: SecureRandom.uuid
                                       ))
 
-  2.months.ago.to_date.upto(Date.today) do |date|
+  2.months.ago.to_date.upto(Date.current) do |date|
     Post.all.each do |post|
       rand(1..5).times do |_x|
         Ahoy::Event.create!(name: 'Viewed Post',

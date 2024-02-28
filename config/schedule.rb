@@ -24,7 +24,7 @@
 set :output, './log/cron.log'
 
 every 1.minutes do
-  runner 'puts Time.now'
+  runner 'puts Time.zone.now'
   runner 'puts Rails.env'
   runner "puts 'Hello, world'"
   runner 'Category.scheduled_category'
